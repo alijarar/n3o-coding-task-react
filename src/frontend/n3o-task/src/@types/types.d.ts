@@ -9,6 +9,7 @@ interface ITable {
     dataSource: TArrayOfObjects;
     rowKey?: TNumberOrString | any;
     pagination?: boolean;
+    onChange?:TObject
 }
   
 interface FormData {

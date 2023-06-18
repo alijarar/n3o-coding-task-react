@@ -28,6 +28,22 @@ export const fetchThemesData = async () => {
       throw error;
     }
 };
+export const fetchStatusesData = async () => {
+    try {
+      const response = await fetch('https://n3o-coding-task-react.azurewebsites.net/api/v1/donationItems/statuses');
+      const data = await response.json();
+      const updatedResponse = data.map((item: TObject) => {
+        return {
+          text: item.name,
+          value:item.id
+        }
+      })
+      return updatedResponse;
+    } catch (error) {
+      console.error('Error fetching data:', error);
+      throw error;
+    }
+};
   
 export const postDonationData = async (payload: TObject) => {
     try {

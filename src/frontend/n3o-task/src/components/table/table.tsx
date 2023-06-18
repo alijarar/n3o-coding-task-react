@@ -6,6 +6,7 @@ export const TableWrapper: React.FC<ITable> = ({
   dataSource,
   rowKey,
   loading = true,
+  onChange
 }) => {
   return (
     <Table
@@ -14,6 +15,7 @@ export const TableWrapper: React.FC<ITable> = ({
       loading={loading}
       rowKey={rowKey}
       pagination={false}
+      onChange={onChange}
     />
   );
 };
